@@ -1,0 +1,115 @@
+.container {
+  min-height: 528px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../../../public/image2.svg");
+}
+
+.content {
+  max-width: 583px;
+}
+.content > h1 {
+  font-family: "Grange", sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.content > p {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 10px;
+}
+.content > button {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Proxima Nova", sans-serif;
+  padding: 16px 64px;
+  margin-top: 45px;
+  cursor: pointer;
+}
+.nextButton > span {
+  background-image: url("../../../public/Frame.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 16px;
+  display: block;
+  height: 16px;
+}
+.buttonBack {
+  transform: rotate(180deg);
+}
+.buttonBack > span {
+  background-image: url("../../../public/Frame.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 16px;
+  display: block;
+  height: 16px;
+  transform: rotate(360deg);
+}
+.productsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.productsContainer > button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #eef7fb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-cards {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+.product-card {
+  max-width: 350px;
+  min-height: 420px;
+  text-align: center;
+  font-family: "Grange", sans-serif;
+  color: #1c2635;
+  background-color: #eef7fb;
+  border-radius: 8px;
+}
+.product-card > img {
+  width: 100%;
+  height: 90%;
+}
+.product-card > h2 {
+  font-size: 24px;
+  line-height: 26px;
+}
+.product-card > p {
+  font-size: 18px;
+  line-height: 19px;
+}
+.notFound {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Grange", sans-serif;
+}
