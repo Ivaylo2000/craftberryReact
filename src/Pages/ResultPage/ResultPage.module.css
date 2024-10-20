@@ -1,5 +1,14 @@
+.resultPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .container {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../../../public/image2.svg");
   min-height: 528px;
+  width: 100%;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,12 +19,11 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-    url("../../../public/image2.svg");
 }
 
 .content {
   max-width: 583px;
+  position: relative;
 }
 .content > h1 {
   font-family: "Grange", sans-serif;
@@ -58,11 +66,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 16px;
-  display: block;
+
   height: 16px;
   transform: rotate(360deg);
 }
 .productsContainer {
+  position: absolute;
+  top: 50%;
+  left: 16%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +86,6 @@
   border-radius: 50%;
   cursor: pointer;
   background-color: #eef7fb;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,20 +96,49 @@
   align-items: center;
   justify-content: center;
   gap: 36px;
+  width: 1122px;
+  height: 421px;
 }
 .product-card {
   max-width: 350px;
-  min-height: 420px;
+  height: 421px;
+  text-overflow: ellipsis;
   text-align: center;
   font-family: "Grange", sans-serif;
   color: #1c2635;
   background-color: #eef7fb;
   border-radius: 8px;
 }
-.product-card > img {
+.product-card > div {
   width: 100%;
-  height: 90%;
+  height: 350px;
+  border-radius: 8px 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
 }
+.wishlist {
+  background-image: url("../../../public/favorite.svg");
+  background-size: cover;
+  cursor: pointer;
+  margin: 17px;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.product-card > main {
+  padding: 46px 60px;
+}
+.product-card > main > h1 {
+  font-family: "Grange", sans-serif;
+  margin-bottom: 16px;
+}
+.product-card > main > span {
+  font-family: "Proxima Nova", sans-serif;
+}
+
 .product-card > h2 {
   font-size: 24px;
   line-height: 26px;
@@ -112,4 +151,25 @@
   text-align: center;
   font-size: 25px;
   font-family: "Grange", sans-serif;
+}
+.currentPage {
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.currentPage > span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.active {
+  background-color: #5bc1ed;
+}
+.inactive {
+  background-color: #e3e3e3;
+}
+.hidden {
+  visibility: hidden;
 }

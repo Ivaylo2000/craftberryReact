@@ -5,8 +5,25 @@ import ResultPage from "./Pages/ResultPage/ResultPage";
 import { useState } from "react";
 function App() {
   const [answers, setAnswers] = useState({});
+
   const handleAnswerClick = (questionId, option) => {
     setAnswers((prevState) => ({ ...prevState, [questionId]: option }));
+  };
+
+  const handleAddToWishlist = (product) => {
+    const existingWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    const productIndex = existingWishlist.findIndex(
+      (item) => item.title === product.title
+    );
+
+    if (productIndex !== -1) {
+      existingWishlist.splice(productIndex, 1);
+    } else {
+      existingWishlist.push(product);
+    }
+
+    localStorage.setItem("wishlist", JSON.stringify(existingWishlist));
   };
   return (
     <Router>
@@ -21,7 +38,15 @@ function App() {
             />
           }
         />
-        <Route path="/results" element={<ResultPage onAnswers={answers} />} />
+        <Route
+          path="/results"
+          element={
+            <ResultPage
+              onAnswers={answers}
+              handleAddToWishlist={handleAddToWishlist}
+            />
+          }
+        />
       </Routes>
     </Router>
   );

@@ -4,7 +4,6 @@ import { questions } from "../../questions/questions";
 import classes from "./QuestionPage.module.css";
 import ProgressCircle from "../../Components/ProgressCircle";
 import Button from "../../Shared/Button";
-
 const QuestionPage = ({ onAnswers, onhandleAnswerClick }) => {
   const { id } = useParams();
   const questionId = parseInt(id);
@@ -41,6 +40,7 @@ const QuestionPage = ({ onAnswers, onhandleAnswerClick }) => {
       <div className={classes.wrapper}>
         <div className={classes.content}>
           <h1>{question.question}</h1>
+
           <ul className={classes.answers}>
             {question.options.map((option, index) => (
               <li
@@ -48,9 +48,7 @@ const QuestionPage = ({ onAnswers, onhandleAnswerClick }) => {
                   onAnswers[question.id] === option ? classes.selected : ""
                 }`}
                 key={index}
-                onClick={() => {
-                  onhandleAnswerClick(question.id, option);
-                }}
+                onClick={() => onhandleAnswerClick(question.id, option)}
               >
                 {`${String.fromCharCode(96 + index + 1)}. ${option}`}
               </li>
