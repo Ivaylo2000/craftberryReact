@@ -70,10 +70,11 @@
   height: 16px;
   transform: rotate(360deg);
 }
+
 .productsContainer {
+  width: 100%;
   position: absolute;
   top: 50%;
-  left: 16%;
   display: flex;
   justify-content: center;
   align-items: center;
